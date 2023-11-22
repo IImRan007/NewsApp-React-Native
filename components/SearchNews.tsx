@@ -7,7 +7,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SearchItem from './SearchItem';
 
 export default function SearchNews() {
@@ -33,6 +33,12 @@ export default function SearchNews() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (searchQuery === '' || searchQuery === null) {
+      setSearchData(null);
+    }
+  }, [searchQuery]);
 
   const onPressSearch = () => {
     if (!searchQuery || searchQuery === '') {
