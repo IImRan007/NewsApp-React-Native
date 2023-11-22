@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 8,
-    marginTop: 8,
+    padding: 8,
+    rowGap: 4,
   },
   headingText: {
     color: '#003049',
